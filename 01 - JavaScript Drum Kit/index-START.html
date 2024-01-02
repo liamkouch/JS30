@@ -10,39 +10,39 @@
 
 
   <div class="keys">
-    <div data-key="65" id="65 box"class="key">
+    <div data-key="65" id="65 box" class="key">
       <kbd>A</kbd>
       <span class="sound">clap</span>
     </div>
-    <div data-key="83" class="key">
+    <div data-key="83" id="83 box" class="key">
       <kbd>S</kbd>
       <span class="sound">hihat</span>
     </div>
-    <div data-key="68" class="key">
+    <div data-key="68" id="68 box" class="key">
       <kbd>D</kbd>
       <span class="sound">kick</span>
     </div>
-    <div data-key="70" class="key">
+    <div data-key="70" id="70 box" class="key">
       <kbd>F</kbd>
       <span class="sound">openhat</span>
     </div>
-    <div data-key="71" class="key">
+    <div data-key="71" id="71 box" class="key">
       <kbd>G</kbd>
       <span class="sound">boom</span>
     </div>
-    <div data-key="72" class="key">
+    <div data-key="72" id="72 box" class="key">
       <kbd>H</kbd>
       <span class="sound">ride</span>
     </div>
-    <div data-key="74" class="key">
+    <div data-key="74" id="74 box" class="key">
       <kbd>J</kbd>
       <span class="sound">snare</span>
     </div>
-    <div data-key="75" class="key">
+    <div data-key="75" id="75 box" class="key">
       <kbd>K</kbd>
       <span class="sound">tom</span>
     </div>
-    <div data-key="76" class="key">
+    <div data-key="76" id="76 box" class="key">
       <kbd>L</kbd>
       <span class="sound">tink</span>
     </div>
@@ -60,13 +60,29 @@
 
 <script>
   const keys = ["65", "83", "68", "70", "71", "72", "74", "75", "76"]
+  /*
+  document.addEventListener('keydown', function(e){
+    if (keys.includes(e.keyCode.toString())) {
+      audio = document.querySelector('audio[data-key="${e.keyCode}"]');
+      
+      audio.play();
+    }
+  });
+  */
   for (let i = 0; i < keys.length; i++) {
     document.addEventListener('keydown', function(e) {
       if (e.keyCode == keys[i]) {
         document.getElementById(keys[i]+" audio").play();
-        document.getElementById()
+        document.getElementById(keys[i]+" box").classList.add("playing");
       }
     });
+    /*
+    document.addEventListener('keypress', function(e) {
+      if (e.keyCode == keys[i]) {
+        document.getElementById(keys[i]+" box").classList.add("playing");
+      }
+    });
+    */
   }
 </script>
 
